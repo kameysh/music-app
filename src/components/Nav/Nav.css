@@ -1,0 +1,38 @@
+.container {
+    /* max-width: 1100px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 0 2rem;
+    overflow: hidden; */
+    border: 2px solid #fff;
+}
+
+
+
+.navs {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.navs li {
+    margin: 15px;
+}
+
+.navs li .btn {
+
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #333;
+    font-weight: 400;
+    cursor: pointer;
+    background-color: f4f4f4;
+}
+
+
+
+
+

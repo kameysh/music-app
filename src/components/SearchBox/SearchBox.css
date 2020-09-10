@@ -1,0 +1,14 @@
+.search-box {
+    width: 80%;
+    height:  40px;
+    margin-bottom: 20px;
+    font-size: medium;
+}
+
+.search-box-center{
+    text-align: center;
+}
+
+.search-box:focus {
+    border: 1px dotted #fff;
+}
