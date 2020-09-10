@@ -32,7 +32,6 @@ export default function CreatePlayList() {
     }
 
     function removeFromPlayList(playListId, Song) {
-        console.log(playListId);
         let listIndex = playListNames.findIndex((playList) => playList.id == playListId)
         playListNames[listIndex].songs = playListNames[listIndex].songs.filter(ExistingSong => {
             return ExistingSong.id !== Song.id
@@ -42,7 +41,6 @@ export default function CreatePlayList() {
     }
 
     function updatePlayList(playListId, Song) {
-        console.log(playListId);
         let listIndex = playListNames.findIndex((playList) => playList.id == playListId)
         playListNames[listIndex].songs.push(Song)
         Pandora.set('PlayList', playListNames);

@@ -15,7 +15,6 @@ export default function AllSongs(props) {
   const fetchSongs = async () => {
     const data = await fetch('https://jsonplaceholder.typicode.com/albums');
     const fetchedSongs = await data.json();
-    console.log(fetchedSongs);
     setSongs(fetchedSongs);
   }
   

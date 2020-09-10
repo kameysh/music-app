@@ -19,7 +19,6 @@ export default function PlayListInfo(props) {
 
     //listening to changes in the playlist
     useEffect(() => {
-        console.log(FoundList);
         setPlayListSongs(FoundList.songs);
     }, [FoundList]);
     //whenever the State changes its array, the useeffect will run and update the list and show us
