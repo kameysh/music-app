@@ -55,7 +55,6 @@ export default function CreatePlayList() {
         //setting up switch to handle the route and render the correct route as needed
         <Switch>
             <div className='container'>
-                {/* passing the children prop in route to get the id */}
                 <Route exact path='/playlists/:selected'>
                     <PlayListInfo
                         // setting the props to remove and update the playlist
@@ -66,6 +65,8 @@ export default function CreatePlayList() {
                 <Route exact path='/playlists'>
                     <div className='container'>
                         <div className='play'>
+                        {/* Reversing the array to sort based on the time. works ascending aswell as descending */}
+                        {/* when the component is loaded the initial state will be read and shown, upon clicking the playlist button it will sort based on time. */}
                             {Lodash.reverse(playListNames).map((PlayList, index) => (
                                 //passing the playlist id in the URL to access it and use the same to update or delete the list
                                 <Link className='link' to={`/playlists/${PlayList.id}`}> <li className='playlists' key={PlayList.id}>

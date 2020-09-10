@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+//using the user params to read the id from the url and pass it back to the component
 import { useParams } from "react-router-dom";
 import AllSongs from "../AllSongs/AllSongs";
 import Songs from "../Songs/Songs";
 import Lodash from "lodash";
 import Pandora from "@faizaanceg/pandora";
 export default function PlayListInfo(props) {
-    const { selected } = useParams()
+    const { selected } = useParams();
 
     const [showSong, setShowSong] = useState(false);
     let playListId = selected;
@@ -21,8 +22,10 @@ export default function PlayListInfo(props) {
         console.log(FoundList);
         setPlayListSongs(FoundList.songs);
     }, [FoundList]);
+    //whenever the State changes its array, the useeffect will run and update the list and show us
 
     function shuffle() {
+        //function to shuffle. using the lodash library to shuffle the array.
         setPlayListSongs(Lodash.shuffle(playListSongs));
     }
 
@@ -43,7 +46,7 @@ export default function PlayListInfo(props) {
             <Songs actions={{
                 deleteFromPlayList: (song) => {
                     props.removeFromPlayList(playListId, song)
-                    setList(Pandora.get('PlayList', []));
+                    setList(Pandora.get('PlayList', [])); //setting the list from local storage
                 }
             }} songs={playListSongs} />
         </div>
